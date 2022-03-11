@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="509.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartsForm">
+   <effect>
+      <Lighting diffuseConstant="1.7" specularConstant="0.0" specularExponent="6.05" surfaceScale="0.0">
+         <bumpInput>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </bumpInput>
+         <light>
+            <Light.Distant>
+               <color>
+                  <Color red="0.7568627595901489" green="0.7921568751335144" blue="0.8549019694328308" />
+               </color>
+            </Light.Distant>
+         </light>
+      </Lighting>
+   </effect>
+   <children>
+      <Label layoutX="20.0" layoutY="14.0" text="Add Part" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="SaveButtonAdd" layoutX="20.0" layoutY="461.0" mnemonicParsing="false" onAction="#savePartAdd" text="Save" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="513.0" layoutY="461.0" mnemonicParsing="false" onAction="#toMainScreen" text="Cancel" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="inHouseRadioAdd" layoutX="96.0" layoutY="90.0" mnemonicParsing="false" onAction="#onInHouseAdd" text="In-House" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="IH_OS_AP" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="outsourcedRadioAdd" layoutX="363.0" layoutY="93.0" mnemonicParsing="false" onAction="#onOutsourcedAdd" selected="true" text="Outsourced" textFill="#6e7475" toggleGroup="$IH_OS_AP">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font></RadioButton>
+      <TextField fx:id="IdTextFieldAdd" disable="true" layoutX="163.0" layoutY="145.0" promptText="ID Auto-Generated">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="NameInput" layoutX="163.0" layoutY="195.0" prefHeight="24.0" prefWidth="150.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="InventoryInput" layoutX="163.0" layoutY="248.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="PriceInput" layoutX="163.0" layoutY="295.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="MaxInPut" layoutX="163.0" layoutY="342.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="MinInput" layoutX="390.0" layoutY="342.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="CompanyName_MachineIdInput" layoutX="163.0" layoutY="392.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <Label layoutX="129.0" layoutY="149.0" text="ID" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font></Label>
+      <Label layoutX="109.0" layoutY="200.0" text="Name" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="252.0" text="Inventory" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="299.0" text="Price/Cost" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="122.0" layoutY="346.0" text="Max" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="357.0" layoutY="346.0" text="Min" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="companyNameMachineIdLabel" layoutX="50.0" layoutY="396.0" text="Company Name" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
