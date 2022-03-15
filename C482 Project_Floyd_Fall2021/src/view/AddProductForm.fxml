@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProductForm">
+   <effect>
+      <Lighting diffuseConstant="1.74" specularConstant="0.0" specularExponent="6.05" surfaceScale="0.0">
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant>
+               <color>
+                  <Color red="0.7568627595901489" green="0.7921568751335144" blue="0.8549019694328308" />
+               </color>
+            </Light.Distant>
+         </light>
+      </Lighting>
+   </effect>
+   <children>
+      <Label layoutX="28.0" layoutY="24.0" text="Add Product" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="saveNewProduct" layoutX="693.0" layoutY="593.0" mnemonicParsing="false" onAction="#saveNewProduct" text="Save" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="821.0" layoutY="593.0" mnemonicParsing="false" onAction="#toMainScreen" text="Cancel" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="addPartToNewProduct" layoutX="858.0" layoutY="292.0" mnemonicParsing="false" onAction="#addPartToNewProduct" text="Add" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeAssociatedPart" layoutX="693.0" layoutY="551.0" mnemonicParsing="false" onAction="#removeAssociatedPart" text="Remove Associated Part" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="NameInput" layoutX="136.0" layoutY="195.0" prefHeight="24.0" prefWidth="150.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="InventoryInput" layoutX="136.0" layoutY="248.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="PriceInput" layoutX="136.0" layoutY="295.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="MaxInPut" layoutX="136.0" layoutY="342.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="MinInput" layoutX="347.0" layoutY="342.0">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font></TextField>
+      <Label layoutX="111.0" layoutY="150.0" text="ID" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font></Label>
+      <Label layoutX="86.0" layoutY="199.0" text="Name" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="252.0" text="Inventory" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="299.0" text="Price/Cost" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="346.0" text="Max" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="315.0" layoutY="346.0" text="Min" textFill="#6e7475">
+         <font>
+            <Font name="Corbel Light" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AutoGenProductId" disable="true" layoutX="136.0" layoutY="146.0" promptText="ID Auto-Generated">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="APFAccessToPartsTable" layoutX="528.0" layoutY="76.0" prefHeight="210.0" prefWidth="418.0">
+        <columns>
+          <TableColumn fx:id="partAddToProductID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="partToAddToProductName" prefWidth="145.0" text="Part Name" />
+            <TableColumn fx:id="partToAddToProductInv" prefWidth="95.0" text="Inventory Level" />
+            <TableColumn fx:id="partToAddToProductPrice" prefWidth="101.0" text="Price per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="APFAccessToAssociatedPartsTable" layoutX="524.0" layoutY="342.0" prefHeight="202.0" prefWidth="425.0">
+        <columns>
+          <TableColumn fx:id="apfAssociatedPartID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="apfAssociatedPartName" prefWidth="140.0" text="Part Name" />
+            <TableColumn fx:id="apfAssociatedPartInv" prefWidth="97.0" text="Inventory Level" />
+            <TableColumn fx:id="apfAssociatedPartPrice" prefWidth="92.0" text="Price per Unit" />
+        </columns>
+      </TableView>
+      <TextField fx:id="APFPartsSearchField" layoutX="799.0" layoutY="42.0" onKeyPressed="#APFPartsSearchOnEnter" promptText="Search Part by ID or Name">
+         <font>
+            <Font name="Corbel Light" size="13.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
